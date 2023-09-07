@@ -50,6 +50,8 @@
 	const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 	function tick() {
+		document.body.style.height = window.innerHeight + "px"
+
 		const today = new Date()
 		const y = today.getFullYear()
 		const mo = MONTHS[today.getMonth()]
