@@ -7,7 +7,7 @@
 	html, body {
 		margin: 0;
 		padding: 0;
-		height: 100vh;
+		overflow: hidden;
 	}
 
 	body {
@@ -41,11 +41,14 @@
 	}
 </style>
 </head>
+
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5vmin; flex: 1">
 	<div id="time"></div>
 	<div id="date"></div>
 </div>
+
 <footer>A project by <a href="https://sharats.me" target="_blank">Shri</a>.</footer>
+
 <script>
 	const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -56,7 +59,7 @@
 		const y = today.getFullYear()
 		const mo = MONTHS[today.getMonth()]
 		const d = today.getDate()
-		const h = today.getHours()
+		const h = today.getHours() % 12 || 12
 		const m = pad(today.getMinutes())
 		const s = pad(today.getSeconds())
 		const meridian = h >= 12 ? "PM" : "AM"
