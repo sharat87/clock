@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clock</title>
+<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		height: 100vh;
+	}
+	body {
+		font-family: sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5vmin;
+	}
+	#time {
+		font-size: 15vmin;
+		font-weight: 300;
+	}
+	#date {
+		font-size: 7vmin;
+		font-weight: 300;
+	}
+</style>
+</head>
+<div id="time"></div>
+<div id="date"></div>
+<script>
+	const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+	function tick() {
+		const today = new Date()
+		const y = today.getFullYear()
+		const mo = MONTHS[today.getMonth()]
+		const d = today.getDate()
+		const h = today.getHours()
+		const m = pad(today.getMinutes())
+		const s = pad(today.getSeconds())
+		const meridian = h >= 12 ? "PM" : "AM"
+
+		document.getElementById("time").innerHTML = `${h}:${m}:${s} <small>${meridian}</small>`
+		document.getElementById("date").innerHTML = `${d} ${mo}, ${y}`
+	}
+
+	function pad(n) {
+		return n < 10 ? "0" + n : n
+	}
+
+	setInterval(tick, 500)
+</script>
+</html>
