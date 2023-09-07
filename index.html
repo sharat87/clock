@@ -20,8 +20,12 @@
 	}
 
 	#time {
-		font-size: 15vmin;
+		font-size: 20vmin;
 		font-weight: 300;
+	}
+
+	#time small {
+		font-size: .5em;
 	}
 
 	#date {
@@ -62,9 +66,9 @@
 		const h = today.getHours() % 12 || 12
 		const m = pad(today.getMinutes())
 		const s = pad(today.getSeconds())
-		const meridian = h >= 12 ? "PM" : "AM"
+		const meridian = today.getHours() >= 12 ? "PM" : "AM"
 
-		document.getElementById("time").innerHTML = `${h}:${m}:${s} <small>${meridian}</small>`
+		document.getElementById("time").innerHTML = `${h}:${m} <small>${meridian}</small>`
 		document.getElementById("date").innerHTML = `${d} ${mo}, ${y}`
 	}
 
