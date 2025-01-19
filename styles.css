@@ -1,0 +1,42 @@
+body {
+	position: fixed;
+	width: 100vw;
+	height: 100%;
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 5vmin;
+	overflow: hidden;
+}
+
+#time {
+	font-size: 30vmin;
+	font-weight: 700;
+	letter-spacing: -3px;
+}
+
+#time small {
+	font-size: .5em;
+}
+
+#date {
+	font-size: 20vmin;
+	font-weight: 700;
+}
+
+footer {
+	font-size: 2vmin;
+	font-weight: 300;
+	color: #888;
+	padding: 9px;
+}
+
+footer a {
+	color: inherit;
+}
+
+body.dark {
+	background: #222;
+	color: #fff;
+}
